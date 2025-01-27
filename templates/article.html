@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="page-title">{{ page.title }}</h1>
+{% if page.author isdefined %}<span class="author-name">{{ page.author }}</span>{% endif %}
+
+{{ page.content | safe }}
+
+{% endblock content %}

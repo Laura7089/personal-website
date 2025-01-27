@@ -17,6 +17,9 @@ minify_html = true
 highlight_code = true
 
 [extra]
+# source code link
+source_link = "https://github.com/Laura7089/personal-website"
+
 # Top-level sections
 nav_top_level = []
 
