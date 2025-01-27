@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Under Construction</title>
+  <style>
+    * {
+      font-family: sans-serif;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    main {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      border: 0.15rem solid lightgray;
+      border-radius: 15px;
+      border-style: solid;
+      border-color: gray;
+      box-shadow: 1rem 1rem 0.5rem lightblue;
+
+      padding: 1rem 4rem;
+    }
+
+    main::before, main::after {
+      content: '🚧';
+      font-size: 2rem;
+    }
+
+    #main-text {
+      display: flex;
+      flex-direction: column;
+      justify-items: space-between;
+      align-items: center;
+
+      height: 100%;
+
+      padding: 1rem 2rem;
+    }
+
+    #main-text * {
+      text-align: center;
+      margin: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+<main>
+  <div id="main-text">
+    <h1>Under Construction</h1>
+    <span>This site is under construction! Check back later.</span>
+  </div>
+</main>
+</body>
+</html>
