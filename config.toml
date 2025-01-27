@@ -1,11 +1,15 @@
 # The URL the site will be built for
 base_url = "https://www.demkowiczduffy.co.uk"
 
+title = "laura's musings"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
+
+minify_html = true
 
 [markdown]
 # Whether to do syntax highlighting
@@ -13,4 +17,9 @@ build_search_index = true
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
+# Top-level sections
+nav_top_level = []
+
+# External socials links
+[extra.socials]
+GitHub = "https://github.com/Laura7089"

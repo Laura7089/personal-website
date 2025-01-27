@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page %}{{ page.title }}{% else %}{{ config.title }}{% endif %}</title>
+  <link rel="stylesheet" href="/basic.css">
+</head>
+
+<body>
+  <header class="top-bar">
+  <nav class="navbar">
+    <a href="/" id="top-bar-brand" class="top-bar-link"><h1>{{ config.title }}</h1></a>
+    {% for slug in config.extra.nav_top_level %}
+    <a href="/{{ slug }}" class="top-bar-link"><h2>{{ slug | capitalize }}</h2></a>
+    {% endfor %}
+  </nav>
+  </header>
+
+  <main>
+    {% block content %} {% endblock %}
+  </main>
+
+  <footer class="bottom-bar">
+    <span id="license-notice">Original site content licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</span>
+    <div id="contact-info">
+      {% for social_name, link in config.extra.socials %}
+      <a href="{{ link }}" class="social-link" id="{{ social_name | slugify }}-social-link">{{ social_name }}</a>
+      {% endfor %}
+    </div>
+  </footer>
+</body>
+
+</html>
