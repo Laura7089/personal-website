@@ -4,7 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Under Construction</title>
+
+  <meta property="og:title" content="{{ config.title }}">
+  {% if config.author %}<meta name="author" content="{{ config.author }}">{% endif %}
+  {% if config.description %}
+  <meta name="description" content="{{ config.description }}">
+  <meta name="og:description" content="{{ config.description }}">
+  {% endif %}
+
+  <title>{{ config.title }}</title>
   <style>
     * {
       font-family: sans-serif;

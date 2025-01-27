@@ -16,4 +16,6 @@ Prose and content on the site (of my own making) are licensed under the Creative
 See [the license text](./CC4-BY-NC-SA.LICENSE).
 Broadly, this includes `./content`.
 
-Non-original content is provided under license from their respective owners, see attribution information where it is displayed.
+Non-original content is provided under license from their respective owners, see attribution information either below or where it is displayed.
+
+The favicon for the site is the "construction" emoji from [fxemoji](https://github.com/mozilla/fxemoji), used under the `Apache-2.0` license.
