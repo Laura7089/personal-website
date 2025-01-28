@@ -5,33 +5,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {% if page.title isdefined %}
-  {% set title = page.title %}
-  {% else %}
-  {% set title = config.title %}
-  {% endif %}
-
-  {% if page.author isdefined %}
-  {% set author = page.author %}
-  {% else %}
-  {% set author = config.author %}
-  {% endif %}
-
   {# see https://ogp.me/ #}
-  <meta property="og:title" content="{{ title }}">
   {% if page.title isdefined %}
-  <meta property="og:site_name" content="{{ config.title }}">
-  {% endif %}
-  {% if author isdefined %}
-  <meta name="author" content="{{ author }}">
-  {% endif %}
-  {% if page.description isdefined %}
-  <meta name="og:description" content="{{ page.description }}">
-  {% elif config.description isdefined %}
-  <meta name="og:description" content="{{ config.description }}">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:site_name" content="{{ config.title }}">
   {% endif %}
 
-  <title>{{ title }}</title>
+  {% if page.authors isdefined %}
+    {% for author in page.authors %}
+    <meta name="author" content="{{ author }}">
+    {% endfor %}
+  {% elif config.author isdefined %}
+    <meta name="author" content="{{ config.author }}">
+  {% endif %}
+
+  {% if page.description isdefined %}
+    <meta name="og:description" content="{{ page.description }}">
+  {% elif config.description isdefined %}
+    <meta name="og:description" content="{{ config.description }}">
+  {% endif %}
+
+  <title>{% if page.title isdefined %}{{ page.title }} | {% endif %}{{ config.title }}</title>
 
   <link rel="stylesheet" href="/basic.css">
 </head>
