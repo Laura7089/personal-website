@@ -2,9 +2,25 @@
 
 {% block content %}
 
-<h1 class="page-title">{{ page.title }}</h1>
-{% if page.author isdefined %}<span class="author-name">{{ page.author }}</span>{% endif %}
+<article>
+<header class="article-header">
+  <h1 class="page-title article-title">{{ page.title }}</h1>
+  <div class="undermatter">
+    {% if page.authors isdefined %}
+      <ul class="author-names">
+      {% for author in page.authors %}<li class="author-name undermatter-text">{{ author }}</li>{% endfor %}
+      </ul>
+    {% endif %}
 
+    {% if page.date isdefined %}<time class="date-stamp undermatter-text">{{ page.date }}</time>{% endif %}
+  </div>
+</header>
+
+<hr>
+
+<div class="article-prose">
 {{ page.content | safe }}
+</div>
 
+</article>
 {% endblock content %}
